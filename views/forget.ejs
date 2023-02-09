@@ -1,8 +1,20 @@
+<!--  -->
 <%- include("partials/header")%>
+<div class="sign-up-page">
+  <a href="/profile" class="back-to-profile">back to home</a>
+  <div class="text-container">
+    <!-- <h5>Reset Password</h5> -->
+    <h2>Reset Password</h2>
+    <p>please enter registered email</p>
+  </div>
 
-<form action="/forget-password" method="post">
-    <input type="email" name="email" placeholder="example@email.com" />
-    <button>Enter Registered Email</button>
-</form>
+  <form action="/forget-password" method="post">
+    <div class="row">
+      <label for="email">email</label>
+      <input type="email" name="email" placeholder="john@example.com" />
+    </div>
 
+    <button>reset password</button>
+  </form>
+</div>
 <%- include("partials/footer")%>

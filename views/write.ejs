@@ -1,8 +1,18 @@
-<%- include("partials/header")%>
-
-<h1>Write Article</h1>
-<div id="editorjs"></div>
-<button>Save Article</button>
+<%- include("partials/header")%> <%- include("partials/navlogin")%>
+<div class="container-editor-js">
+  <div class="container-editor-js-left">
+    <h1>Write Article</h1>
+    <div class="container-editor-js-left-container">
+      <div id="editorjs"></div>
+    </div>
+  </div>
+  <div class="container-editor-js-right">
+    <button>
+      <img src="./images/publish.png" alt="" />
+      Save Article
+    </button>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>

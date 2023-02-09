@@ -1,0 +1,11 @@
+<%- include("partials/header")%>
+
+<div class="read-blog-container">
+  <a class="real-blog-back-btn" href="/">back</a>
+  <h3>
+    <img height="30px" src="/uploads/<%= blog.author.avatar%>" alt="" />
+    <%= blog.author.name%>
+  </h3>
+  <div class="blog"><%-blog.blog%></div>
+</div>
+<%- include("partials/footer")%>

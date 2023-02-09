@@ -1,13 +1,66 @@
-<%- include("partials/header")%>
+<%- include("partials/header")%> <%- include("partials/navlogin")%>
+<div class="container-profile-edit">
+  <div class="left">
+    <% if(lists[0]){%>
+    <h2>your Blogs</h2>
+    <% lists.forEach(elem => { %>
+    <!-- <%= JSON.stringify(elem.blog)%> -->
+    <div class="single-blog">
+      <h3>
+        <img height="30" src="/uploads/<%= user.avatar%>" alt="" />
+        <%= user.name%>
+      </h3>
+      <div class="blog"><%- elem.blog%></div>
+      <div class="delete-btn">
+        <a href="/delete-blog/<%=elem._id %>">
+          <img src="./images/delete.png" alt=""  class="delete-btn-image"/>
+        </a>
+      </div>
+    </div>
 
-<form action="/profile" method="post" enctype="multipart/form-data">
-    <textarea name="about" placeholder="enter text here" cols="30" rows="10">
-<%= user.about%></textarea
-    >
-    <img height="200" src="/uploads/<%=user.avatar%>" alt="" />
-    <input type="file" name="avatar" />
-    <input type="hidden" name="oldavatar" value="<%= user.avatar%>" />
-    <button>Save Profile</button>
-</form>
+    <% }) %> <% } else {%>
+    <div class="no-post-container">
+      <img src="/images/no-post.jpeg" alt="" />
+
+      <div class="no-post">
+        <h2>Nothing published yet.</h2>
+        <p>
+          Writing ideas down helps you learn and remember things easily. Try it,
+          create your first idea!
+        </p>
+
+        <a href="/write" class="no-post-write-btn">
+          <img src="/images/write.svg" alt="" />
+          create your first idea
+        </a>
+      </div>
+    </div>
+
+    <% }%>
+  </div>
+  <div class="right">
+    <img class="profile-pic" src="/uploads/<%=user.avatar%>" alt="" />
+    <div class="profile-pic-set-row-1">
+      <div class="item">
+        <h3><%=user.name%></h3>
+        <p><%= user.about%></p>
+      </div>
+    </div>
+    <button class="edit-profile-pic-btn">edit</button>
+    <div class="pagal">
+      <form action="/profile" method="post" enctype="multipart/form-data">
+        <textarea name="about" placeholder="enter text here" cols="30" rows="5">
+        <%= user.about%></textarea
+        >
+        <label for="">upload profile pic</label>
+        <input type="file" name="avatar" />
+        <input type="hidden" name="oldavatar" value="<%= user.avatar%>" />
+        <button class="hide-profile-again">Save Profile</button>
+      </form>
+    </div>
+    <div class="advance-settings-continer"></div>
+    <a href="/settings">advance settings</a>
+  </div>
+</div>
 
 <%- include("partials/footer")%>

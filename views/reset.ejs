@@ -1,9 +1,32 @@
+<!--  -->
 <%- include("partials/header")%>
+<div class="sign-up-page">
+    <a href="/profile"  class="back-to-profile">back to profile</a>
+  <div class="text-container">
+    <h5>Learn Anything</h5>
+    <h2>Remember Anything</h2>
+    <p>
+      The idea format helps 2M+ people remember the ideas that help them grow.
+      <br />
+      Join the community. Save and remember ideas. Share & discover.
+    </p>
+  </div>
 
-<form action="/reset-password" method="post">
-    <input type="password" name="oldpassword" placeholder="********" />
-    <input type="password" name="newpassword" placeholder="********" />
-    <button>Reset Password</button>
-</form>
+  <form action="/reset-password" method="post">
+    <h3>Create Account</h3>
+    <div class="row">
+      <label for="password">old password</label>
+      <input type="password" name="oldpassword" placeholder="********" />
+      <!-- <input type="email" name="email" placeholder="john@example.com" /> -->
+    </div>
 
+    <div class="row">
+      <label for="password">new password</label>
+      <input type="password" name="newpassword" placeholder="********" />
+      <!-- <input type="password" name="password" placeholder="********" />1 -->
+    </div>
+
+    <button>submit..</button>
+  </form>
+</div>
 <%- include("partials/footer")%>

@@ -1,2 +1,32 @@
+<script >
+    const profileBtn=document.querySelector(".nav-login .right-container .profile img")
+    const hideShow=document.querySelector(".nav-login .right-container .show-profile")
+    const editProfileBtn=document.querySelector(".edit-profile-pic-btn")
+    const hideProfile=document.querySelector(".pagal")
+    const hideProfileBtnAgain=document.querySelector(".hide-profile-again")
+    function a(){
+        hideShow.classList.toggle('hide');
+        // this.classList.toggle('sec');
+    }
+    function b(){
+        hideShow.classList.toggle('show-edit');
+        console.log(hideProfile)
+        // hideShow.style.height="10vh"
+        hideProfile.setAttribute("style","height:300px");
+        console.log("bye")
+        // this.classList.toggle('sec');
+    }
+    // function c(){
+    //     hideShow.classList.toggle('show-edit');
+    //     console.log(hideProfile)
+    //     // hideShow.style.height="10vh"
+    //     hideProfile.setAttribute("style","height:0px");
+    //     console.log("bye")
+    //     // this.classList.toggle('sec');
+    // }
+    editProfileBtn?.addEventListener("click",b)
+    profileBtn?.addEventListener('click', a )
+    // hideProfileBtnAgain.addEventListener("click",c)
+</script>
 </body>
 </html>

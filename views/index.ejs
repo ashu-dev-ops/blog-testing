@@ -1,31 +1,83 @@
 <%- include("partials/header")%>
+
 <!--  -->
 <% if(isLoggedIn){%>
 <!--  -->
+
 <%- include("partials/navlogin")%>
+<div class="side-bar">
+  <li style="color: white; background-color: black">daily pics</li>
+  <li>
+    <a href="/lists"> your post </a>
+  </li>
+</div>
+
+<div class="logged-in-blogs-container">
+  <div class="left">
+    <style>
+      .blog img {
+        height: 300px;
+      }
+    </style>
+    <% blogs.forEach(elem => { %>
+    <!-- <%= JSON.stringify(elem.blog)%> -->
+    <div class="single-blog">
+      <h3>
+        <img height="30" src="/uploads/<%= elem.author.avatar%>" alt="" />
+
+        <a href="/other-profile/<%= elem.author._id%>">
+          <%= elem.author.name%>
+        </a>
+      </h3>
+      <div class="blog"><%- elem.blog%></div>
+      <a href="/read-blog/<%=elem._id%> " class="read-blog-btn">
+        <img src="./images/publish.png" alt="" />
+      </a>
+      <div class="gradient"></div>
+    </div>
+
+    <% }) %>
+  </div>
+  <div class="right">
+    <img src="/images/playstore.jpeg" alt="" />
+  </div>
+</div>
 
 <style>
-    .blog img {
-        height: 300px;
-    }
+  .blog img {
+    height: 300px;
+  }
 </style>
 <!--  -->
-
-<% blogs.forEach(elem => { %>
-<!-- <%= JSON.stringify(elem.blog)%> -->
-<div>
-    <h3>
-        <img height="30" src="/uploads/<%= elem.author.avatar%>" alt="" />
-        <%= elem.author.name%>
-    </h3>
-    <div class="blog"><%- elem.blog%></div>
-</div>
-<% }) %>
 
 <!--  -->
 <% } else {%>
 <!--  -->
 <%- include("partials/nav")%>
+<div class="hero">
+  <div class="left">
+    <h1>
+      Got 5 Minutes?
+      <br />
+      Plenty for an Article
+    </h1>
+    <p>
+      Deepstash helps creative (but busy) folk unlock knowledge from books,
+      articles & podcasts.
+    </p>
+
+    <div class="sign-up-btn">
+      <a href="/signup">Sign Up for Free</a>
+    </div>
+  </div>
+  <div class="right">
+    <div class="right-container">
+      <img class="hero-svg" src="images/hero.svg" alt="" />
+      <img class="blank-screen" src="images/screen.png" alt="" />
+      <img class="hero-gandhi" src="images/hero-gan.jpg" alt="" />
+    </div>
+  </div>
+</div>
 <!--  -->
 <% }%>
 

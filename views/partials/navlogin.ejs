@@ -1,13 +1,27 @@
-<nav>
+<nav class="nav-login">
+  <div class="left-container">
+    <a href="/">
+      <img src="images/logged-in-logo.jpeg" alt="" />
+    </a>
     <form action="/search">
-        <input type="text" name="search Medium">
+      <input type="text" name="search Medium" />
     </form>
+  </div>
 
-    <a href="/write">Write</a>
-    <a href="/profile">Profile</a>
-    <a href="/lists">Lists</a>
-    <a href="/stories">Stories</a>
-    <a href="/settings">Settings</a>
-    <a href="/signout">Signout</a>
+  <div class="right-container">
+    <a href="/write" class="write">
+      <img src="/images/write.svg" alt="" />
+    </a>
+    <div class="profile">
+      <img src="/uploads/<%=user.avatar%>" alt="" />
+    </div>
+    <div class="show-profile hide">
+      <!-- <a href="/stories">Stories</a> -->
+      <!-- <a href="/settings">Settings</a> -->
+      <a href="/profile">Profile</a>
+      <a href="/signout">Signout</a>
 
+      <!-- <a href="/lists">Lists</a> -->
+    </div>
+  </div>
 </nav>

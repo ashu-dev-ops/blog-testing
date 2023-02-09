@@ -1,21 +1,33 @@
 <%- include("partials/header")%>
-<style>
-    .blog img {
-        height: 300px;
-    }
-</style>
+
 <!--  -->
 
-<% lists.forEach(elem => { %>
-<!-- <%= JSON.stringify(elem.blog)%> -->
-<div>
-    <h3>
+<%- include("partials/navlogin")%>
+<div class="side-bar">
+  <li>
+    <a href="/">daily pics</a>
+  </li>
+  <li style="color: white; background-color: black">your post</li>
+</div>
+
+<div class="logged-in-blogs-container">
+  <div class="left">
+    <% lists.forEach(elem => { %>
+    <!-- <%= JSON.stringify(elem.blog)%> -->
+    <div class="single-blog">
+      <h3>
         <img height="30" src="/uploads/<%= user.avatar%>" alt="" />
         <%= user.name%>
-    </h3>
-    <div class="blog"><%- elem.blog%></div>
+      </h3>
+      <div class="blog"><%- elem.blog%></div>
+    </div>
+    <% }) %>
+  </div>
+  <div class="right">
+    <img src="/images/lists.svg" alt="" />
+  </div>
 </div>
-<% }) %>
+<!--  -->
 
 <!--  -->
 <%- include("partials/footer")%>

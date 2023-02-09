@@ -1,43 +1,46 @@
-<%- include("partials/header")%>
+<%- include("partials/header")%> <%- include("partials/navlogin")%>
+<div class="settings-container">
+  <div class="right">
+    <form action="/settings" method="post">
+      <form action="/settings" method="POST">
+        <div class="row">
+          <label for="">Email: </label>
+          <input name="email" type="email" value="<%= user.email%>" /><br />
+        </div>
+        <div class="row">
+          <label for="">Username: </label>
+          <input
+            name="username"
+            type="text"
+            value="<%= user.username%>"
+          /><br />
+        </div>
+        <div class="row">
+          <label for="">Name: </label>
+          <input name="name" type="text" value="<%= user.name%>" /><br />
+        </div>
 
-<form action="/settings" method="post">
-    <form action="/settings" method="POST">
-        <label for="">Email: </label>
-        <input name="email" type="email" value="<%= user.email%>" /><br />
-        <label for="">Username: </label>
-        <input name="username" type="text" value="<%= user.username%>" /><br />
-        <label for="">Name: </label>
-        <input name="name" type="text" value="<%= user.name%>" /><br />
-        <a style="text-decoration: none; color: black" href="/profile">
-            <label
-                style="
-                    width: 20%;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                "
-            >
-                <span>
-                    Profile Information <br />
-                    <small>Edit Bio, about, avatar</small>
-                </span>
-                <div
-                    style="
-                        width: 50px;
-                        height: 50px;
-                        background-size: cover;
-                        border-radius: 50%;
-                        background-position: center;
-                        background-image: url('/uploads/<%= user.avatar %>');
-                    "
-                ></div>
-            </label>
-        </a>
-        <button>Save Information</button>
+        <button>Save</button>
+      </form>
+      <hr />
     </form>
-    <hr />
-    <a href="/delete">Delete User</a>
-    <a href="/reset-password">Reset Password</a>
-</form>
+  </div>
+  <div class="left">
+    <div
+      style="
+        width: 100px;
+        height: 100px;
+        background-size: cover;
+        border-radius: 50%;
+        background-position: center;
+        background-image: url('/uploads/<%= user.avatar %>');
+      "
+    ></div>
+    <div class="row">
+      <a href="/delete">Delete User</a>
+      <a href="/reset-password">Reset Password</a>
+    </div>
+  </div>
+</div>
 
 <%- include("partials/footer")%>

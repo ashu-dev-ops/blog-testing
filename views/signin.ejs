@@ -1,11 +1,31 @@
+<!--  -->
 <%- include("partials/header")%>
+<div class="sign-up-page">
+  <a href="/" class="back-to-profile">back to home</a>
+  <div class="text-container">
+    <h5>Discover Your</h5>
+    <h2>Next Big Idea</h2>
+    <p>
+      Ideas come from books, articles, podcasts & more... <br />
+      We make it easy by picking the best ideas from a 200,000+ catalogue on
+      thousands of topics.
+    </p>
+  </div>
 
-<form action="/signin" method="post">
-    <input type="email" name="email" placeholder="john@example.com" />
-    <input type="password" name="password" placeholder="********" />
-    <button>Sign In</button>
-    <br />
-    <a href="/forget-password">Forget Password ?</a>
-</form>
+  <form action="/signin" method="post">
+    <h3>Create Account</h3>
+    <div class="row">
+      <label for="email">email</label>
+      <input type="email" name="email" placeholder="john@example.com" />
+    </div>
 
+    <div class="row">
+      <label for="password">password</label>
+      <input type="password" name="password" placeholder="********" />
+    </div>
+
+    <button>Sign in</button>
+  </form>
+  <a href="/forget-password">Forget Password ?</a>
+</div>
 <%- include("partials/footer")%>
